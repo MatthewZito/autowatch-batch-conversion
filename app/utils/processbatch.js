@@ -1,5 +1,9 @@
+require ("hazardous");
 const _ = require("lodash");
 const ffmpeg = require("fluent-ffmpeg");
+
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffprobePath = require('@ffprobe-installer/ffprobe').path;
 
 /**
  * @param {Array} videos The current batch of videos to be processed.
@@ -13,10 +17,17 @@ const ffmpeg = require("fluent-ffmpeg");
 const processBatchMetadata = (videos, selectedWindow) => {
     const batch = _.map(videos, video => {
         return new Promise((resolve, reject) => {
+            ffmpeg.setFfprobePath(ffprobePath);
+            ffmpeg.setFfmpegPath(ffmpegPath);
             ffmpeg.ffprobe(video.path, (err, metadata) => {
-                // TODO update v of Electron and use spread syntax here 
-                // no reason to directly mutate original video obj; I'll use assign here
-                resolve(Object.assign({}, video, { duration: metadata.format.duration, format: "avi" }));
+                console.log("path", video.path)
+                console.log("meta", metadata)
+                console.log("err", err);
+                resolve({
+                    ...video,
+                    duration: metadata.format.duration,
+                    format: "avi"
+                });
             });
         });
     });
@@ -60,3 +71,5 @@ module.exports = {
     processBatchMetadata,
     processBatchConversion
 };
+
+console.log(ffprobePath, ffmpegPath)

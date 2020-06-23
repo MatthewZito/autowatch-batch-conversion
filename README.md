@@ -37,3 +37,5 @@ I'll probably just add a MakeFile, shell script, or something else to automate t
   npm run package
 
   ```
+
+  Note that the package `hazardous` is absolutely imperative here for production builds. The package acts as a middleware of sorts that overrides native `Node.js` path methods to check for unpacked `.asar` archives. If found, the paths are resolved using a relatively performant, platform-agnostic algorithm that leverages a regex to resolve to the proper `app.asar.unpacked` allocation. If this package is *not* used, production builds will not function as the electron client will be unable to call `ffmpeg` - the `.asar` paths will be misaligned.

@@ -6,7 +6,7 @@
   "main": "app/electron.js",
   "homepage": "./",
   "scripts": {
-    "dev": "export ELECTRON_START_URL=http://localhost:3000 && concurrently \"npm start\" \"wait-on http://localhost:3000 && electron ./app/\"",
+    "dev": "export ELECTRON_START_URL=http://localhost:3000 && concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "start": "react-scripts start",
     "start-win": "react-scripts start",
     "start-electron": "export ELECTRON_START_URL=http://localhost:3000 && electron ./app/",
@@ -24,6 +24,7 @@
   "build": {
     "files": [
       "build/**/*",
+      "dist/**/*",
       "node_modules/**/*"
     ]
   },
@@ -54,8 +55,10 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "electron-is-dev": "^1.2.0",
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "@ffprobe-installer/ffprobe": "^1.0.12",
     "fluent-ffmpeg": "^2.1.2",
+    "hazardous": "^0.3.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "moment-duration-format": "^2.3.2",

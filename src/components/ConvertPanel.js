@@ -26,8 +26,7 @@ class ConvertPanel extends Component {
 }
 
 function mapStateToProps(state) {   
-    const videos = _.map(state.videos);   
-    return { videos }; 
+    return { videos: _.map(state.videos) };
 }
 
 export default withRouter(

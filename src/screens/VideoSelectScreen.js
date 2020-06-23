@@ -30,7 +30,7 @@ class VideoSelectScreen extends Component {
         } else if (isDragReject) {
             return <h4 className="drop-message">Unsupported file type detected.</h4>;
         } else {
-            return <h4 className="drop-message">Drag and drop files to mark them for conversion, or click to select.</h4>
+            return <h4 className="drop-message">Drag and Drop or Click to Add Files</h4>
         }
     }
 
