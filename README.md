@@ -7,6 +7,7 @@ License: GPL 3.0
 ## Table of Contents
 
  - [Introduction](#intro) 
+    * [Demo](#demo)
     * [Boilerplate / Tutorial](#tut)
  - [Documentation](#docs)
     * [Development](#dev)
@@ -17,6 +18,9 @@ This package is a simple cross-platform desktop application that performs batch 
 There aren't many free (Note: as RMS would say, "Free as in freedom, not 'free beer'") video converter apps out there, and the ones that are free (this time as in "free beer") are compiled with tons of bloatware, malware, and other unwanted goodies.
 
 This repository also serves as a boilerplate for simple Electron + React + Redux setup for both development *and* production. I'll be extending this README into a full-fledged tutorial soon; do let me know if you would be interested in such a tutorial by filing an issue, subject beginning with `[REQUEST]`. This will probably motivate me to do it sooner, knowing that fellow developers will actually benefit from it. 
+
+### Batch Video Converter Demo (Full Electron-integrated React + Redux app)
+![demo](https://github.com/MatthewZito/autowatch-batch-conversion/blob/master/documentation/batch-converter-demo.gif)
 
 ### <a name="tut"></a>  Electron + React + Redux Boilerplate (2020)
 This tutorial covers how to integrate React + Redux with Electron for both development and production with *no hassle*. With this method, you'll only be *updating a single line of code* in your app's source. Please star this repo if you found it helpful!
