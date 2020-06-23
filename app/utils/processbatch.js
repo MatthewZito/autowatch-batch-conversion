@@ -20,9 +20,6 @@ const processBatchMetadata = (videos, selectedWindow) => {
             ffmpeg.setFfprobePath(ffprobePath);
             ffmpeg.setFfmpegPath(ffmpegPath);
             ffmpeg.ffprobe(video.path, (err, metadata) => {
-                console.log("path", video.path)
-                console.log("meta", metadata)
-                console.log("err", err);
                 resolve({
                     ...video,
                     duration: metadata.format.duration,
@@ -71,5 +68,3 @@ module.exports = {
     processBatchMetadata,
     processBatchConversion
 };
-
-console.log(ffprobePath, ffmpegPath)
