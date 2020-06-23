@@ -16,6 +16,7 @@
     "build": "react-scripts build",
     "build-electron": "cp -r app/. build/app",
     "build-electron-win": "robocopy electron build/app /S",
+    "alt-build-for-win": "electron-builder -p never --win -c.extraMetadata.main=build/app/electron.js",
     "package": "electron-builder build --mac --win -c.extraMetadata.main=build/app/electron.js --publish never",
     "package-win": "electron-builder build --win -c.extraMetadata.main=build/app/electron.js --publish never",
     "test": "react-scripts test",
