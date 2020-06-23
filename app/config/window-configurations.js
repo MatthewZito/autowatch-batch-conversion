@@ -11,7 +11,7 @@ const config = {
             show: false,
             webPreferences: {
                 nodeIntegration: true,
-                backgroundThrottling: false
+                backgroundThrottling: false,
             }
         },
         filePath: process.env.ELECTRON_START_URL || url.format({
