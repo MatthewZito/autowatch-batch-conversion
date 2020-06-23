@@ -34,5 +34,6 @@ I'll probably just add a MakeFile, shell script, or something else to automate t
   # step 2
   npm run build-electron
   # step 3
+  npm run package
 
   ```

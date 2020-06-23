@@ -1,5 +1,4 @@
 const electron = require("electron");
-const isDev = require("electron-is-dev");
 const MainWindow = require("./templates/MainWindow.js");
 const config = require("./config/window-configurations.js");
 const { processBatchMetadata, processBatchConversion } = require("./utils/processbatch.js");

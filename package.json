@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Electron conversion app",
   "private": true,
-  "main": "./app/index.js",
+  "main": "app/electron.js",
   "homepage": "./",
   "scripts": {
     "dev": "export ELECTRON_START_URL=http://localhost:3000 && concurrently \"npm start\" \"wait-on http://localhost:3000 && electron ./app/\"",
@@ -16,8 +16,8 @@
     "build": "react-scripts build",
     "build-electron": "cp -r app/. build/app",
     "build-electron-win": "robocopy electron build/app /S",
-    "package": "electron-builder build --mac --win -c.extraMetadata.main=build/app/index.js --publish never",
-    "package-win": "electron-builder build --win -c.extraMetadata.main=build/app/index.js --publish never",
+    "package": "electron-builder build --mac --win -c.extraMetadata.main=build/app/electron.js --publish never",
+    "package-win": "electron-builder build --win -c.extraMetadata.main=build/app/electron.js --publish never",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
